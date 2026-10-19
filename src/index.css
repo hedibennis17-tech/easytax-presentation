@@ -743,3 +743,271 @@ footer { padding: 23px clamp(20px, 5vw, 76px); display: flex; align-items: cente
     align-items: flex-start;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   CHAPTER 18 — SUBSCRIPTIONS & BUSINESS MODEL
+═══════════════════════════════════════════════ */
+
+.subs-block {
+  margin: 40px 0;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.subs-block-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 24px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: Manrope, sans-serif;
+}
+.subs-block-header.coral { background: hsl(14 90% 95%); color: hsl(14 70% 35%); }
+.subs-block-header.violet { background: hsl(262 80% 95%); color: hsl(262 60% 35%); }
+.subs-block-header.gold { background: hsl(43 90% 93%); color: hsl(43 70% 32%); }
+
+.subs-block-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800;
+  flex-shrink: 0;
+}
+
+.subs-block-title {
+  flex: 1;
+}
+
+.subs-table-wrap {
+  overflow-x: auto;
+  padding: 0 24px 24px;
+}
+
+.subs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.subs-table thead tr {
+  border-bottom: 2px solid var(--border);
+}
+
+.subs-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.subs-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.subs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.subs-price {
+  font-weight: 700;
+  font-family: Manrope, sans-serif;
+  color: var(--accent-coral, #e85d3a);
+  white-space: nowrap;
+}
+
+.subs-unit {
+  font-weight: 600;
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+
+.subs-rules {
+  padding: 16px 24px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.subs-rules-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 10px;
+}
+
+.subs-rules ul {
+  margin: 0; padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.subs-rules ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.subs-rules ul li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+/* Common rules grid */
+.subs-common {
+  margin: 44px 0 36px;
+}
+
+.subs-common-title,
+.subs-journeys-title,
+.subs-arch-title,
+.subs-accept-title {
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.subs-common-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.subs-common-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.subs-common-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.subs-common-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* User journeys */
+.subs-journeys {
+  margin: 44px 0 36px;
+}
+
+.subs-journeys-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.subs-journey-card {
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.subs-journey-profile {
+  padding: 14px 18px;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+
+.subs-journey-card.coral .subs-journey-profile { background: hsl(14 90% 95%); color: hsl(14 70% 30%); }
+.subs-journey-card.violet .subs-journey-profile { background: hsl(262 80% 95%); color: hsl(262 60% 30%); }
+.subs-journey-card.gold .subs-journey-profile { background: hsl(43 90% 93%); color: hsl(43 70% 28%); }
+
+.subs-journey-steps {
+  margin: 0; padding: 16px 18px 16px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.subs-journey-steps li {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* Data architecture */
+.subs-arch {
+  margin: 44px 0 36px;
+}
+
+/* Acceptance criteria */
+.subs-accept {
+  margin: 44px 0 16px;
+  padding: 28px 28px 24px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+}
+
+.subs-accept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.subs-accept-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.subs-accept-check {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #22c55e;
+}
+
+@media (max-width: 768px) {
+  .subs-journeys-grid {
+    grid-template-columns: 1fr;
+  }
+  .subs-accept-grid {
+    grid-template-columns: 1fr;
+  }
+  .subs-common-grid {
+    grid-template-columns: 1fr;
+  }
+  .subs-table {
+    font-size: 12px;
+  }
+  .subs-block-header {
+    font-size: 14px;
+  }
+}

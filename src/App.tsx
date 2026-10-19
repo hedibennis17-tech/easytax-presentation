@@ -28,6 +28,7 @@ import {
   Map,
   AlertTriangle,
   ArrowRight,
+  CreditCard,
 } from "lucide-react";
 
 type Lang = "fr" | "en";
@@ -191,6 +192,15 @@ function App() {
       titleEn: "Roadmap & Current State",
       eyebrow: "17",
       color: "coral",
+    },
+    {
+      id: 18,
+      icon: CreditCard,
+      slug: "subscriptions",
+      titleFr: "Abonnements & Modèle commercial",
+      titleEn: "Subscriptions & Business Model",
+      eyebrow: "18",
+      color: "cyan",
     },
   ], []);
 
@@ -1569,6 +1579,411 @@ function App() {
         </div>
       </section>
 
+      {/* CHAPTER 18 — SUBSCRIPTIONS & BUSINESS MODEL */}
+      <section className="doc-section" id="subscriptions">
+        <div className="doc-section-inner">
+          <div className="doc-chapter-header cyan">
+            <div className="doc-eyebrow">18 · {isEn ? "SUBSCRIPTIONS & BUSINESS MODEL" : "ABONNEMENTS & MODÈLE COMMERCIAL"}</div>
+            <h2>{isEn ? "Monetization strategy — three profiles, three models" : "Stratégie de monétisation — trois profils, trois modèles"}</h2>
+          </div>
+
+          {/* Intro */}
+          <p className="doc-body-text">
+            {isEn
+              ? "EasyTax Canada monetizes through three distinct commercial models adapted to each user profile. Each payment unlocks specific rights — without breaking existing accounts, documents, or tax history."
+              : "EasyTax Canada se monétise selon trois modèles commerciaux distincts, adaptés à chaque profil d'utilisateur. Chaque paiement déverrouille des droits précis — sans jamais casser les comptes, les documents ni l'historique fiscal existants."}
+          </p>
+
+          {/* ── INDIVIDUAL ── */}
+          <div className="subs-block">
+            <div className="subs-block-header coral">
+              <span className="subs-block-num">01</span>
+              <span className="subs-block-title">{isEn ? "EasyTax Personal — Individual Declaration" : "EasyTax Personnel — Déclaration individuelle"}</span>
+            </div>
+            <p className="doc-body-text">
+              {isEn
+                ? "One personal tax return for one fiscal year. The price is determined by the total annual income declared — confirmed before payment."
+                : "Une déclaration fiscale personnelle pour une année fiscale. Le prix est déterminé par le revenu total annuel déclaré — confirmé avant le paiement."}
+            </p>
+            <div className="subs-table-wrap">
+              <table className="subs-table">
+                <thead>
+                  <tr>
+                    <th>{isEn ? "Annual income declared" : "Revenu annuel déclaré"}</th>
+                    <th>{isEn ? "Proposed price" : "Prix proposé"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { fr: "Moins de 20 000 $", en: "Under $20,000", price: "20 $" },
+                    { fr: "20 000 $ – 39 999 $", en: "$20,000 – $39,999", price: "50 $" },
+                    { fr: "40 000 $ – 60 999 $", en: "$40,000 – $60,999", price: "70 $" },
+                    { fr: "61 000 $ – 90 999 $", en: "$61,000 – $90,999", price: "120 $" },
+                    { fr: "91 000 $ – 150 999 $", en: "$91,000 – $150,999", price: "200 $" },
+                    { fr: "151 000 $ – 200 000 $", en: "$151,000 – $200,000", price: "300 $" },
+                    { fr: "Plus de 200 000 $", en: "Over $200,000", price: isEn ? "Custom evaluation" : "Évaluation personnalisée" },
+                  ].map(row => (
+                    <tr key={row.fr}>
+                      <td>{isEn ? row.en : row.fr}</td>
+                      <td className="subs-price">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="subs-rules">
+              <div className="subs-rules-title">{isEn ? "Key rules" : "Règles clés"}</div>
+              <ul>
+                <li>{isEn ? "Price confirmed before payment — no silent surcharges." : "Prix confirmé avant le paiement — aucune majoration silencieuse."}</li>
+                <li>{isEn ? "One purchase covers one declaration for one fiscal year." : "Un achat couvre une déclaration pour une année fiscale précise."}</li>
+                <li>{isEn ? "A declaration already purchased cannot be billed again for the same year." : "Une déclaration déjà achetée ne peut pas être facturée à nouveau pour la même année."}</li>
+                <li>{isEn ? "Thresholds are configurable by an authorized administrator." : "Les seuils sont configurables par un administrateur autorisé."}</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ── PREPARER ── */}
+          <div className="subs-block">
+            <div className="subs-block-header violet">
+              <span className="subs-block-num">02</span>
+              <span className="subs-block-title">{isEn ? "EasyTax Pro — Preparer Annual Packs" : "EasyTax Pro — Packs annuels préparateurs"}</span>
+            </div>
+            <p className="doc-body-text">
+              {isEn
+                ? "Credit packs valid for one purchased fiscal year. Each credit covers one T1 return for one taxpayer for that year."
+                : "Packs de crédits valables pour l'année fiscale achetée. Chaque crédit couvre une déclaration T1 d'un contribuable pour cette année."}
+            </p>
+            <div className="subs-table-wrap">
+              <table className="subs-table">
+                <thead>
+                  <tr>
+                    <th>{isEn ? "Pack" : "Pack"}</th>
+                    <th>{isEn ? "Capacity" : "Capacité"}</th>
+                    <th>{isEn ? "Price" : "Prix"}</th>
+                    <th>{isEn ? "Unit cost" : "Coût unitaire"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { name: "Starter", cap_fr: "10 dossiers", cap_en: "10 files", price: "300 $", unit: "30 $" },
+                    { name: "Cabinet", cap_fr: "20 dossiers", cap_en: "20 files", price: "500 $", unit: "25 $" },
+                    { name: "Cabinet Plus", cap_fr: "30 dossiers", cap_en: "30 files", price: "750 $", unit: "25 $" },
+                    { name: "Volume", cap_fr: "100 dossiers", cap_en: "100 files", price: "2 000 $", unit: "20 $" },
+                  ].map(row => (
+                    <tr key={row.name}>
+                      <td><strong>{row.name}</strong></td>
+                      <td>{isEn ? row.cap_en : row.cap_fr}</td>
+                      <td className="subs-price">{row.price}</td>
+                      <td className="subs-unit">{row.unit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="subs-rules">
+              <div className="subs-rules-title">{isEn ? "Credit rules" : "Règles des crédits"}</div>
+              <ul>
+                <li>{isEn ? "A credit is consumed when a billable declaration is finalized — not when a file is created or a document uploaded." : "Un crédit est consommé à la finalisation d'une déclaration facturable — pas à la création d'un dossier ni au téléversement d'un document."}</li>
+                <li>{isEn ? "The operation is atomic and idempotent: one declaration cannot consume two credits due to a double-click or network issue." : "L'opération est atomique et idempotente : une même déclaration ne peut pas consommer deux crédits à cause d'un double clic ou d'un problème réseau."}</li>
+                <li>{isEn ? "Credits are valid only for the purchased fiscal year." : "Les crédits sont utilisables uniquement pour l'année fiscale prévue."}</li>
+                <li>{isEn ? "If no credit is available, the system proposes a new pack purchase — without blocking access to existing data." : "En l'absence de crédit disponible, le système propose l'achat d'un nouveau pack — sans bloquer l'accès aux données déjà enregistrées."}</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ── BUSINESS ── */}
+          <div className="subs-block">
+            <div className="subs-block-header gold">
+              <span className="subs-block-num">03</span>
+              <span className="subs-block-title">{isEn ? "EasyTax Business — Monthly Subscription" : "EasyTax Entreprise — Abonnement mensuel"}</span>
+            </div>
+            <p className="doc-body-text">
+              {isEn
+                ? "Monthly subscription in Canadian dollars, before applicable taxes. Thresholds guide the choice of plan — they do not automatically block business operations."
+                : "Abonnement mensuel en dollars canadiens, avant taxes applicables. Les seuils orientent le choix de l'offre — ils ne bloquent pas automatiquement les opérations commerciales."}
+            </p>
+            <div className="subs-table-wrap">
+              <table className="subs-table">
+                <thead>
+                  <tr>
+                    <th>{isEn ? "Plan" : "Offre"}</th>
+                    <th>{isEn ? "Employees" : "Employés"}</th>
+                    <th>{isEn ? "Annual revenue" : "Chiffre d'affaires annuel"}</th>
+                    <th>{isEn ? "Monthly price" : "Prix mensuel"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { fr: "Essentiel", en: "Essential", emp_fr: "Jusqu'à 3", emp_en: "Up to 3", rev_fr: "Jusqu'à 250 000 $", rev_en: "Up to $250,000", price: "29 $" },
+                    { fr: "Croissance", en: "Growth", emp_fr: "Jusqu'à 15", emp_en: "Up to 15", rev_fr: "Jusqu'à 2 000 000 $", rev_en: "Up to $2,000,000", price: "79 $" },
+                    { fr: "Business Plus", en: "Business Plus", emp_fr: "Jusqu'à 50", emp_en: "Up to 50", rev_fr: "Jusqu'à 10 000 000 $", rev_en: "Up to $10,000,000", price: "179 $" },
+                    { fr: "Entreprise", en: "Enterprise", emp_fr: "Au-delà", emp_en: "Beyond", rev_fr: "Sur devis", rev_en: "Custom quote", price: isEn ? "Custom" : "Personnalisé" },
+                  ].map(row => (
+                    <tr key={row.fr}>
+                      <td><strong>{isEn ? row.en : row.fr}</strong></td>
+                      <td>{isEn ? row.emp_en : row.emp_fr}</td>
+                      <td>{isEn ? row.rev_en : row.rev_fr}</td>
+                      <td className="subs-price">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="subs-rules">
+              <div className="subs-rules-title">{isEn ? "Subscription rules" : "Règles de l'abonnement"}</div>
+              <ul>
+                <li>{isEn ? "The subscription belongs to the organization, not automatically to its creator." : "L'abonnement appartient à l'organisation, pas automatiquement à son créateur personnel."}</li>
+                <li>{isEn ? "Cancellation stops renewals but never deletes files or documents." : "Une annulation arrête les renouvellements, mais ne supprime jamais les dossiers ni les documents."}</li>
+                <li>{isEn ? "Plan change and its consequences are presented to the admin before confirmation." : "Le changement d'offre et ses conséquences sont présentés à l'administrateur avant confirmation."}</li>
+                <li>{isEn ? "Access to existing data and documents is maintained after subscription end, per the defined access policy." : "L'accès aux données et documents existants est maintenu après la fin de l'abonnement, selon la politique d'accès définie."}</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* ── COMMON RULES ── */}
+          <div className="subs-common">
+            <div className="subs-common-title">{isEn ? "Common billing rules" : "Règles communes de facturation"}</div>
+            <div className="subs-common-grid">
+              {[
+                {
+                  icon: "🔒",
+                  fr: "Les abonnements et crédits sont validés côté serveur. Le navigateur ne décide jamais qu'un paiement est valide.",
+                  en: "Subscriptions and credits are validated server-side. The browser never decides that a payment is valid.",
+                },
+                {
+                  icon: "💱",
+                  fr: "Les prix sont en dollars canadiens. Les taxes applicables sont calculées séparément.",
+                  en: "Prices are in Canadian dollars. Applicable taxes are calculated separately.",
+                },
+                {
+                  icon: "📋",
+                  fr: "Les tarifs sont modifiables par un administrateur autorisé, avec historique des changements.",
+                  en: "Prices are modifiable by an authorized administrator, with a full change history.",
+                },
+                {
+                  icon: "📌",
+                  fr: "Une commande conserve le prix accepté au moment de l'achat, même si le catalogue change par la suite.",
+                  en: "An order retains the price accepted at the time of purchase, even if the catalog changes later.",
+                },
+                {
+                  icon: "⚡",
+                  fr: "Un paiement échoué ne crée aucun droit payant. Aucune donnée de carte bancaire n'est stockée dans EasyTax.",
+                  en: "A failed payment creates no paid rights. No sensitive card data is stored in EasyTax.",
+                },
+                {
+                  icon: "🗂️",
+                  fr: "Faire payer EasyTax ne casse jamais l'accès aux données existantes. Le paiement contrôle les fonctionnalités payantes, pas les comptes, les documents ni l'historique.",
+                  en: "Monetizing EasyTax never breaks access to existing data. Payment controls paid features, not accounts, documents, or history.",
+                },
+              ].map((rule, i) => (
+                <div key={i} className="subs-common-card">
+                  <div className="subs-common-icon">{rule.icon}</div>
+                  <div className="subs-common-text">{isEn ? rule.en : rule.fr}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── USER JOURNEYS ── */}
+          <div className="subs-journeys">
+            <div className="subs-journeys-title">{isEn ? "User journeys by profile" : "Parcours utilisateur par profil"}</div>
+            <div className="subs-journeys-grid">
+              {[
+                {
+                  profile_fr: "Particulier",
+                  profile_en: "Individual",
+                  color: "coral",
+                  steps_fr: [
+                    "Connexion au compte personnel existant",
+                    "Sélection ou confirmation de l'année fiscale",
+                    "Questionnaire et récupération des informations déjà enregistrées",
+                    "Détermination du prix selon la règle commerciale",
+                    "Présentation du prix et des taxes",
+                    "Confirmation et paiement",
+                    "Activation du droit de produire la déclaration",
+                    "Accès à la déclaration, aux documents et au reçu",
+                    "Consultation de l'achat dans l'historique",
+                  ],
+                  steps_en: [
+                    "Sign in to existing personal account",
+                    "Select or confirm fiscal year",
+                    "Questionnaire and retrieval of already registered information",
+                    "Price determination per commercial rule",
+                    "Price and taxes displayed",
+                    "Confirmation and payment",
+                    "Declaration right activated",
+                    "Access to declaration, documents and receipt",
+                    "Purchase visible in history",
+                  ],
+                },
+                {
+                  profile_fr: "Préparateur",
+                  profile_en: "Preparer",
+                  color: "violet",
+                  steps_fr: [
+                    "Connexion au compte professionnel existant",
+                    "Sélection de l'année fiscale",
+                    "Consultation des packs et de leur capacité",
+                    "Achat et confirmation du pack",
+                    "Mise à jour du solde après confirmation du paiement",
+                    "Gestion des dossiers clients dans l'espace existant",
+                    "Consommation d'un crédit à la finalisation facturable",
+                    "Consultation des mouvements et des crédits restants",
+                  ],
+                  steps_en: [
+                    "Sign in to existing professional account",
+                    "Select fiscal year",
+                    "View available packs and capacity",
+                    "Purchase and confirm pack",
+                    "Balance updated after payment confirmation",
+                    "Manage client files in existing space",
+                    "Credit consumed at billable finalization",
+                    "View movements and remaining credits",
+                  ],
+                },
+                {
+                  profile_fr: "Entreprise",
+                  profile_en: "Business",
+                  color: "gold",
+                  steps_fr: [
+                    "Connexion à l'organisation existante",
+                    "Consultation de l'offre actuelle ou recommandée",
+                    "Affichage des fonctionnalités, limites, prix et taxes",
+                    "Confirmation de l'abonnement et du paiement",
+                    "Activation des droits pour l'organisation",
+                    "Consultation des employés, de la consommation et de l'historique",
+                    "Changement d'offre ou annulation selon les règles définies",
+                    "Maintien de l'accès aux données après la fin de l'abonnement",
+                  ],
+                  steps_en: [
+                    "Sign in to existing organization",
+                    "View current or recommended plan",
+                    "Review features, limits, price and taxes",
+                    "Confirm subscription and payment",
+                    "Organization rights activated",
+                    "View employees, usage and billing history",
+                    "Change plan or cancel per defined rules",
+                    "Data access maintained after subscription end",
+                  ],
+                },
+              ].map(journey => (
+                <div key={journey.profile_fr} className={`subs-journey-card ${journey.color}`}>
+                  <div className="subs-journey-profile">{isEn ? journey.profile_en : journey.profile_fr}</div>
+                  <ol className="subs-journey-steps">
+                    {(isEn ? journey.steps_en : journey.steps_fr).map((step, i) => (
+                      <li key={i}>{step}</li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── DATA ARCHITECTURE ── */}
+          <div className="subs-arch">
+            <div className="subs-arch-title">{isEn ? "Data architecture — required entities" : "Architecture des données — entités nécessaires"}</div>
+            <div className="subs-table-wrap">
+              <table className="subs-table">
+                <thead>
+                  <tr>
+                    <th>{isEn ? "Entity" : "Entité"}</th>
+                    <th>{isEn ? "Role" : "Rôle"}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      entity_fr: "Catalogue des offres",
+                      entity_en: "Offer catalog",
+                      role_fr: "Nom, type, prix, devise, périodicité, règles de capacité, dates de validité, statut",
+                      role_en: "Name, type, price, currency, periodicity, capacity rules, validity dates, status",
+                    },
+                    {
+                      entity_fr: "Versions tarifaires",
+                      entity_en: "Price versions",
+                      role_fr: "Conserve les tarifs historiques — une modification ne change pas rétroactivement une commande déjà payée",
+                      role_en: "Preserves historical pricing — a change does not retroactively alter a paid order",
+                    },
+                    {
+                      entity_fr: "Commandes",
+                      entity_en: "Orders",
+                      role_fr: "Acheteur, produit, montant HT, taxes, total, devise, statut, dates, référence fournisseur",
+                      role_en: "Buyer, product, pretax amount, taxes, total, currency, status, dates, provider reference",
+                    },
+                    {
+                      entity_fr: "Paiements",
+                      entity_en: "Payments",
+                      role_fr: "Références de transaction, statut, montant, remboursements, événements vérifiés",
+                      role_en: "Transaction references, status, amount, refunds, verified events",
+                    },
+                    {
+                      entity_fr: "Abonnements",
+                      entity_en: "Subscriptions",
+                      role_fr: "Organisation, offre, statut, période, date de renouvellement, dates de fin ou d'annulation",
+                      role_en: "Organization, plan, status, period, renewal date, end or cancellation dates",
+                    },
+                    {
+                      entity_fr: "Packs & Crédits",
+                      entity_en: "Packs & Credits",
+                      role_fr: "Packs achetés, année fiscale, quantité achetée, solde, dates de validité",
+                      role_en: "Purchased packs, fiscal year, quantity bought, balance, validity dates",
+                    },
+                    {
+                      entity_fr: "Registre des mouvements",
+                      entity_en: "Movement register",
+                      role_fr: "Chaque attribution, consommation, correction ou remboursement de crédit — aucune modification silencieuse du solde",
+                      role_en: "Every credit attribution, consumption, correction or refund — no silent balance modification",
+                    },
+                    {
+                      entity_fr: "Factures & Reçus",
+                      entity_en: "Invoices & Receipts",
+                      role_fr: "Numéros, montants, taxes, dates, références, documents associés",
+                      role_en: "Numbers, amounts, taxes, dates, references, associated documents",
+                    },
+                    {
+                      entity_fr: "Journal d'audit",
+                      entity_en: "Audit log",
+                      role_fr: "Changements administratifs, modifications de tarifs, événements de paiement, remboursements, opérations sur les crédits",
+                      role_en: "Administrative changes, price modifications, payment events, refunds, credit operations",
+                    },
+                  ].map(row => (
+                    <tr key={row.entity_fr}>
+                      <td><strong>{isEn ? row.entity_en : row.entity_fr}</strong></td>
+                      <td>{isEn ? row.role_en : row.role_fr}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* ── ACCEPTANCE CRITERIA ── */}
+          <div className="subs-accept">
+            <div className="subs-accept-title">{isEn ? "Acceptance criteria" : "Critères d'acceptation"}</div>
+            <div className="subs-accept-grid">
+              {[
+                { fr: "Les comptes et rôles existants fonctionnent toujours", en: "Existing accounts and roles still work" },
+                { fr: "Aucun espace utilisateur n'a été reconstruit inutilement", en: "No user space was rebuilt unnecessarily" },
+                { fr: "Les tarifs sont centralisés et administrables", en: "Prices are centralized and administrable" },
+                { fr: "Les paiements confirmés activent les droits appropriés", en: "Confirmed payments activate appropriate rights" },
+                { fr: "Les paiements échoués n'accordent aucun droit payant", en: "Failed payments grant no paid rights" },
+                { fr: "Les crédits préparateurs sont fiables et traçables", en: "Preparer credits are reliable and traceable" },
+                { fr: "Les abonnements entreprise sont associés à la bonne organisation", en: "Business subscriptions are linked to the correct organization" },
+                { fr: "Les données fiscales et les documents sont conservés", en: "Tax data and documents are preserved" },
+                { fr: "Les contrôles de permissions sont effectués côté serveur", en: "Permission checks are performed server-side" },
+                { fr: "Le déploiement ne dépend pas de secrets exposés ou de données de démonstration", en: "Deployment does not rely on exposed secrets or demo data" },
+              ].map((item, i) => (
+                <div key={i} className="subs-accept-item">
+                  <Check size={14} className="subs-accept-check" />
+                  <span>{isEn ? item.en : item.fr}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* TABLE OF CONTENTS */}
       <section className="toc-section" id="chapters">
         <div className="doc-section-inner">
@@ -1576,7 +1991,7 @@ function App() {
             {isEn ? "COMPLETE TABLE OF CONTENTS" : "TABLE DES MATIÈRES COMPLÈTE"}
           </div>
           <h2 style={{ fontFamily: "Manrope, sans-serif", fontWeight: 800, fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.06em", color: "var(--ink)", marginBottom: "32px" }}>
-            {isEn ? "All 17 chapters" : "Les 17 chapitres"}
+            {isEn ? "All 18 chapters" : "Les 18 chapitres"}
           </h2>
           <div className="toc-grid">
             {chapters.map(ch => {
