@@ -209,8 +209,8 @@ function App() {
       {/* HEADER */}
       <header className="site-header">
         <a className="brand" href="#top" aria-label="EasyTax home">
-          <span className="brand-mark"><span>ET</span></span>
-          <span><strong>Easy</strong><b>Tax</b><small>CANADA · QUÉBEC</small></span>
+          <img src="/easytax-logo.png" alt="EasyTax" className="brand-logo-img" />
+          <small className="brand-tagline">CANADA · QUÉBEC</small>
         </a>
         <nav className={menuOpen ? "nav open" : "nav"}>
           <a href="#vision" onClick={() => setMenuOpen(false)}>{isEn ? "Vision" : "Vision"}</a>
@@ -2017,8 +2017,7 @@ function App() {
       {/* FOOTER */}
       <footer id="contact">
         <div className="footer-brand">
-          <span className="brand-mark small"><span>ET</span></span>
-          <span><strong>Easy</strong><b>Tax</b></span>
+          <img src="/easytax-logo.png" alt="EasyTax" className="footer-logo-img" />
         </div>
         <p>{isEn ? "EasyTax · Functional design document · Canada / Quebec" : "EasyTax · Document de conception fonctionnelle · Canada / Québec"}</p>
         <div className="footer-links">
