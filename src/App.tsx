@@ -241,6 +241,23 @@ function App() {
               {isEn ? "View all 17 chapters" : "Voir les 17 chapitres"} <ChevronDown size={16} />
             </a>
           </div>
+          <div className="demo-access-block">
+            <a
+              className="button demo"
+              href="https://easytax-sigma.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Sparkles size={16} />
+              {isEn ? "Try the live demo" : "Tester la démo en direct"} <ArrowUpRight size={15} />
+            </a>
+            <div className="demo-credentials">
+              <span className="demo-cred-label">{isEn ? "Demo access:" : "Accès démo :"}</span>
+              <code>hedi01273@gmail.com</code>
+              <span className="demo-cred-sep">·</span>
+              <code>FSHvfKipGE7vS9C</code>
+            </div>
+          </div>
           <div className="demo-note">
             <BadgeCheck size={17} />
             <span>{isEn ? "Functional design document · demo data · no official result" : "Document de conception fonctionnelle · données de démonstration · aucun résultat officiel"}</span>
@@ -279,6 +296,62 @@ function App() {
           <div key={metric}><span>0{i + 1}</span><strong>{metric}</strong></div>
         ))}
       </div>
+
+      {/* SYNOPSIS COMPLET */}
+      <section className="synopsis-section" id="synopsis">
+        <div className="synopsis-inner">
+          <div className="doc-eyebrow">{isEn ? "COMPLETE SYNOPSIS" : "SYNOPSIS COMPLET"}</div>
+          <h2>{isEn ? "EasyTax Canada — An integrated fiscal management platform" : "EasyTax Canada — Une plateforme intégrée de gestion fiscale"}</h2>
+          <div className="synopsis-body">
+            <p>
+              {isEn
+                ? "EasyTax is a digital platform designed to simplify tax obligations for individuals and businesses in Canada. It organizes tax information, guides users through their processes, centralizes supporting documents, automates calculations using versioned rules, and tracks each declaration from preparation to its final status."
+                : "EasyTax est une plateforme numérique conçue pour simplifier les obligations fiscales des particuliers et des entreprises au Canada. Elle organise les informations fiscales, guide les utilisateurs dans leurs démarches, centralise les documents justificatifs, automatise les calculs selon des règles versionnées et permet de suivre chaque déclaration depuis sa préparation jusqu'à son statut final."}
+            </p>
+            <p>
+              {isEn
+                ? "The platform rests on a fundamental principle: every piece of information must be entered once, verified, reused when permitted, and tracked to its final tax use."
+                : "La plateforme repose sur un principe fondamental : chaque information doit être saisie une seule fois, vérifiée, réutilisée lorsque cela est permis et suivie jusqu'à son utilisation fiscale finale."}
+            </p>
+            <p>
+              {isEn
+                ? "When a taxpayer opens their account, EasyTax progressively builds their profile. The system identifies the fiscal year, jurisdiction, income sources, and information required for their declaration. It then adapts questions to their actual situation, without forcing them to navigate irrelevant sections."
+                : "Lorsqu'un contribuable ouvre son compte, EasyTax construit progressivement son profil. Le système identifie son année fiscale, sa juridiction, ses sources de revenus et les renseignements nécessaires à sa déclaration. Il adapte ensuite les questions à sa situation réelle, sans lui imposer de parcourir des rubriques inutiles."}
+            </p>
+            <p>
+              {isEn
+                ? "Imported documents are classified, analyzed, and reconciled with profile data. Extracted amounts do not automatically become final tax values — they pass through consistency checks and, when necessary, user validation."
+                : "Les documents importés sont classés, analysés et rapprochés des données du profil. Les montants extraits ne deviennent pas automatiquement des valeurs fiscales définitives : ils passent par des contrôles de cohérence et, lorsque nécessaire, par une validation de l'utilisateur."}
+            </p>
+            <p>
+              {isEn
+                ? "Confirmed data feeds a tax engine separate from the interface. It applies the relevant rules for the year and jurisdiction, calculates declaration lines, and provides a traceable explanation of results. Errors and missing information are presented before final validation."
+                : "Les données confirmées alimentent un moteur fiscal distinct de l'interface. Celui-ci applique les règles pertinentes pour l'année et la juridiction, calcule les lignes de la déclaration et fournit une explication traçable des résultats. Les erreurs et les informations manquantes sont présentées avant la validation finale."}
+            </p>
+            <p>
+              {isEn
+                ? "In parallel, the business space manages the organization's information, authorized employees, documents and applicable tax obligations. Tax preparers access files that have been entrusted to them. Administration controls configuration, rules, operations and security, with logging of sensitive actions. EasyTax thus forms a coherent system in which questionnaires, documents, the tax dictionary, the calculation engine, accounts, declarations and administration tools work together — without data duplication or confusion between an estimate, a filed declaration, and an accepted declaration."
+                : "En parallèle, l'espace entreprise permet de gérer les informations de l'organisation, les employés autorisés, les documents et les obligations fiscales applicables. Les préparateurs fiscaux accèdent aux dossiers qui leur ont été confiés. L'administration contrôle la configuration, les règles, les opérations et la sécurité, avec une journalisation des actions sensibles. EasyTax forme ainsi un système cohérent dans lequel les questionnaires, les documents, le dictionnaire fiscal, le moteur de calcul, les comptes, les déclarations et les outils d'administration fonctionnent ensemble, sans duplication des données ni confusion entre une estimation, une déclaration transmise et une déclaration acceptée."}
+            </p>
+          </div>
+          <div className="synopsis-demo-cta">
+            <a
+              className="button primary"
+              href="https://easytax-sigma.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isEn ? "Access the live platform" : "Accéder à la plateforme en direct"} <ArrowUpRight size={16} />
+            </a>
+            <div className="synopsis-demo-info">
+              <span>{isEn ? "Demo:" : "Démo :"}</span>
+              <code>hedi01273@gmail.com</code>
+              <span>/</span>
+              <code>FSHvfKipGE7vS9C</code>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CHAPTER 1 — VISION */}
       <section className="doc-section" id="vision">
@@ -591,6 +664,142 @@ function App() {
               </div>
             ))}
           </div>
+
+          {/* Detailed workflow table */}
+          <div className="workflow-detail-table">
+            <div className="doc-table-title" style={{ marginTop: "48px", marginBottom: "20px" }}>
+              {isEn ? "Detailed step breakdown — inputs, processing, outputs, errors" : "Détail des étapes — entrées, traitements, sorties, erreurs"}
+            </div>
+            <table className="doc-table workflow-full-table">
+              <thead>
+                <tr>
+                  <th>{isEn ? "Step" : "Étape"}</th>
+                  <th>{isEn ? "Objective" : "Objectif"}</th>
+                  <th>{isEn ? "Inputs" : "Entrées"}</th>
+                  <th>{isEn ? "Processing" : "Traitement"}</th>
+                  <th>{isEn ? "Outputs" : "Sorties"}</th>
+                  <th>{isEn ? "Possible errors" : "Erreurs possibles"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    n: "01",
+                    obj_fr: "Créer et authentifier l'utilisateur",
+                    obj_en: "Create and authenticate user",
+                    in_fr: "Email, mot de passe ou OAuth",
+                    in_en: "Email, password or OAuth",
+                    proc_fr: "Vérification Clerk, attribution du rôle",
+                    proc_en: "Clerk verification, role assignment",
+                    out_fr: "Session active, userId, rôle",
+                    out_en: "Active session, userId, role",
+                    err_fr: "Compte inexistant, mot de passe invalide",
+                    err_en: "Non-existent account, invalid password",
+                  },
+                  {
+                    n: "02",
+                    obj_fr: "Identifier l'année et la juridiction",
+                    obj_en: "Identify year and jurisdiction",
+                    in_fr: "Profil existant ou nouveau",
+                    in_en: "Existing or new profile",
+                    proc_fr: "Chargement des données, détection province",
+                    proc_en: "Data loading, province detection",
+                    out_fr: "Dossier actif, règles de l'année chargées",
+                    out_en: "Active file, year rules loaded",
+                    err_fr: "Année fiscale non supportée",
+                    err_en: "Unsupported fiscal year",
+                  },
+                  {
+                    n: "03",
+                    obj_fr: "Collecter les informations fiscales",
+                    obj_en: "Collect tax information",
+                    in_fr: "Réponses utilisateur",
+                    in_en: "User answers",
+                    proc_fr: "Logique conditionnelle, sauvegarde auto",
+                    proc_en: "Conditional logic, auto-save",
+                    out_fr: "Données fiscales validées, progression",
+                    out_en: "Validated tax data, progress",
+                    err_fr: "Champs obligatoires manquants",
+                    err_en: "Missing required fields",
+                  },
+                  {
+                    n: "04",
+                    obj_fr: "Extraire les données des feuillets",
+                    obj_en: "Extract slip data",
+                    in_fr: "Fichier PDF/image",
+                    in_en: "PDF/image file",
+                    proc_fr: "OCR.space, hachage, déduplication",
+                    proc_en: "OCR.space, hashing, deduplication",
+                    out_fr: "Cases numérotées + valeurs extraites",
+                    out_en: "Numbered boxes + extracted values",
+                    err_fr: "Document illisible, doublon détecté",
+                    err_en: "Unreadable document, duplicate detected",
+                  },
+                  {
+                    n: "05",
+                    obj_fr: "Mapper les cases aux lignes fiscales",
+                    obj_en: "Map boxes to tax lines",
+                    in_fr: "Cases extraites, type de feuillet",
+                    in_en: "Extracted boxes, slip type",
+                    proc_fr: "Consultation du dictionnaire versionné",
+                    proc_en: "Versioned dictionary lookup",
+                    out_fr: "Valeurs associées aux lignes T1/TP-1",
+                    out_en: "Values mapped to T1/TP-1 lines",
+                    err_fr: "Case inconnue, feuillet non catalogué",
+                    err_en: "Unknown box, uncatalogued slip",
+                  },
+                  {
+                    n: "06",
+                    obj_fr: "Calculer l'impôt fédéral et provincial",
+                    obj_en: "Calculate federal and provincial tax",
+                    in_fr: "Données validées, règles de l'année",
+                    in_en: "Validated data, year rules",
+                    proc_fr: "Barèmes, crédits, déductions, cotisations",
+                    proc_en: "Brackets, credits, deductions, contributions",
+                    out_fr: "Lignes T1/TP-1, résultat traçable",
+                    out_en: "T1/TP-1 lines, traceable result",
+                    err_fr: "Données manquantes, règle non couverte",
+                    err_en: "Missing data, uncovered rule",
+                  },
+                  {
+                    n: "07",
+                    obj_fr: "Présenter et valider les résultats",
+                    obj_en: "Present and validate results",
+                    in_fr: "Résultat du moteur, anomalies",
+                    in_en: "Engine result, anomalies",
+                    proc_fr: "Affichage expliqué, corrections guidées",
+                    proc_en: "Explained display, guided corrections",
+                    out_fr: "Déclaration validée par l'utilisateur",
+                    out_en: "User-validated declaration",
+                    err_fr: "Correction entraîne recalcul complet",
+                    err_en: "Correction triggers full recalculation",
+                  },
+                  {
+                    n: "08",
+                    obj_fr: "Transmettre et suivre la déclaration",
+                    obj_en: "File and track declaration",
+                    in_fr: "Déclaration validée, consentement",
+                    in_en: "Validated declaration, consent",
+                    proc_fr: "Transmission via connecteur autorisé",
+                    proc_en: "Transmission via authorized connector",
+                    out_fr: "Statut réel, accusé, archivage",
+                    out_en: "Real status, receipt, archiving",
+                    err_fr: "Rejet du connecteur, correction requise",
+                    err_en: "Connector rejection, correction required",
+                  },
+                ].map(row => (
+                  <tr key={row.n}>
+                    <td><span className="step-badge">{row.n}</span></td>
+                    <td><strong>{isEn ? row.obj_en : row.obj_fr}</strong></td>
+                    <td>{isEn ? row.in_en : row.in_fr}</td>
+                    <td>{isEn ? row.proc_en : row.proc_fr}</td>
+                    <td>{isEn ? row.out_en : row.out_fr}</td>
+                    <td className="error-cell">{isEn ? row.err_en : row.err_fr}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -780,6 +989,14 @@ function App() {
                 : "Le dictionnaire fiscal est le pont entre un document physique et la déclaration fiscale. Il catalogue chaque type de feuillet, chaque case numérotée, les plages de valeurs valides, les alias OCR (comment un scanner pourrait mal lire une étiquette de case) et les lignes fiscales qu'elles alimentent — versionné par année fiscale et juridiction."}
             </p>
           </div>
+          <div className="doc-prose wide" style={{ marginBottom: "32px" }}>
+            <h3>{isEn ? "Dictionary structure" : "Structure du dictionnaire"}</h3>
+            <p>
+              {isEn
+                ? "Each entry in the dictionary defines: the official slip name, the CRA/Revenu Québec code, every numbered box, the valid value type (amount, percentage, date, code), OCR aliases (how a scanner might misread a label), and the tax line(s) in T1 or TP-1 that the box feeds — versioned by fiscal year."
+                : "Chaque entrée du dictionnaire définit : le nom officiel du feuillet, le code ARC/Revenu Québec, toutes les cases numérotées, le type de valeur valide (montant, pourcentage, date, code), les alias OCR (comment un scanner pourrait mal lire une étiquette), et la ou les lignes fiscales T1 ou TP-1 que la case alimente — versionné par année fiscale."}
+            </p>
+          </div>
           <div className="slip-examples">
             <div className="doc-table-title">{isEn ? "Slip examples with box mappings" : "Exemples de feuillets avec correspondances de cases"}</div>
             <div className="slip-grid">
@@ -788,13 +1005,37 @@ function App() {
                 { slip: "Relevé 1", boxFr: "Case A — Revenus d'emploi", boxEn: "Box A — Employment income", lineFr: "→ Ligne 101 (TP-1 provincial)", lineEn: "→ Line 101 (TP-1 provincial)" },
                 { slip: "T4A", boxFr: "Case 020 — Pension ou rente", boxEn: "Box 020 — Pension or annuity", lineFr: "→ Ligne 11500 (T1 fédéral)", lineEn: "→ Line 11500 (T1 federal)" },
                 { slip: "T4E", boxFr: "Case 14 — Prestations d'assurance-emploi", boxEn: "Box 14 — Employment insurance benefits", lineFr: "→ Ligne 11900 (T1 fédéral)", lineEn: "→ Line 11900 (T1 federal)" },
+                { slip: "T5007", boxFr: "Case 10 — Revenus nets de remplacement", boxEn: "Box 10 — Net replacement income", lineFr: "→ Ligne 14400 (T1 fédéral)", lineEn: "→ Line 14400 (T1 federal)" },
                 { slip: "T5", boxFr: "Case 13 — Dividendes", boxEn: "Box 13 — Dividends", lineFr: "→ Ligne 12000 (T1 fédéral)", lineEn: "→ Line 12000 (T1 federal)" },
+                { slip: "T3", boxFr: "Case 21 — Gains en capital étrangers", boxEn: "Box 21 — Foreign capital gains", lineFr: "→ Annexe 3 (T1 fédéral)", lineEn: "→ Schedule 3 (T1 federal)" },
+                { slip: "T5008", boxFr: "Case 20 — Produit de disposition", boxEn: "Box 20 — Proceeds of disposition", lineFr: "→ Annexe 3 (T1 fédéral)", lineEn: "→ Schedule 3 (T1 federal)" },
+                { slip: "T4RSP", boxFr: "Case 22 — Montant REER retiré", boxEn: "Box 22 — RRSP amount withdrawn", lineFr: "→ Ligne 12900 (T1 fédéral)", lineEn: "→ Line 12900 (T1 federal)" },
                 { slip: "T2202", boxFr: "Case C — Frais de scolarité admissibles", boxEn: "Box C — Eligible tuition fees", lineFr: "→ Ligne 32300 (T1 fédéral)", lineEn: "→ Line 32300 (T1 federal)" },
+                { slip: "REER", boxFr: "Reçu REER — Montant cotisé", boxEn: "RRSP receipt — Contribution amount", lineFr: "→ Ligne 20800 (T1 fédéral)", lineEn: "→ Line 20800 (T1 federal)" },
               ].map(item => (
                 <div key={item.slip} className="slip-card">
                   <div className="slip-badge">{item.slip}</div>
                   <div className="slip-box">{isEn ? item.boxEn : item.boxFr}</div>
                   <div className="slip-line">{isEn ? item.lineEn : item.lineFr}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="doc-prose wide" style={{ marginTop: "32px" }}>
+            <h3>{isEn ? "OCR identification flow for a slip" : "Flux d'identification OCR pour un feuillet"}</h3>
+            <div className="ocr-id-flow">
+              {[
+                { n: "1", fr: "Lecture du titre du feuillet", en: "Slip title read" },
+                { n: "2", fr: "Correspondance avec le catalogue (alias OCR)", en: "Catalog match (OCR aliases)" },
+                { n: "3", fr: "Extraction des cases numérotées", en: "Numbered boxes extracted" },
+                { n: "4", fr: "Validation type + plage de valeur", en: "Type + value range validation" },
+                { n: "5", fr: "Mapping vers lignes fiscales versionnées", en: "Mapping to versioned tax lines" },
+                { n: "6", fr: "Soumission à validation humaine si incertain", en: "Submitted to human validation if uncertain" },
+              ].map((step, i) => (
+                <div key={step.n} className="ocr-step">
+                  <span className="ocr-step-num">{step.n}</span>
+                  <span>{isEn ? step.en : step.fr}</span>
+                  {i < 5 && <span className="ocr-arrow">→</span>}
                 </div>
               ))}
             </div>
@@ -884,6 +1125,45 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Pedagogic example */}
+          <div className="engine-example-block">
+            <div className="doc-table-title" style={{ marginTop: "40px", marginBottom: "16px" }}>
+              {isEn ? "Pedagogic example — Salaried worker, Ontario, 2024 (illustrative only)" : "Exemple pédagogique — Salarié, Ontario, 2024 (illustratif uniquement)"}
+            </div>
+            <div className="engine-example-note">
+              <AlertTriangle size={14} />
+              {isEn ? "These numbers are illustrative. They do not constitute official tax advice." : "Ces chiffres sont illustratifs. Ils ne constituent pas un avis fiscal officiel."}
+            </div>
+            <table className="doc-table engine-table">
+              <thead>
+                <tr>
+                  <th>{isEn ? "Line" : "Ligne"}</th>
+                  <th>{isEn ? "Description" : "Description"}</th>
+                  <th>{isEn ? "Source" : "Source"}</th>
+                  <th>{isEn ? "Amount" : "Montant"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { line: "10100", desc_fr: "Revenus d'emploi", desc_en: "Employment income", src_fr: "T4 Case 14", src_en: "T4 Box 14", amt: "65 000 $" },
+                  { line: "20800", desc_fr: "Déduction REER", desc_en: "RRSP deduction", src_fr: "Reçu REER", src_en: "RRSP receipt", amt: "− 5 000 $" },
+                  { line: "23600", desc_fr: "Revenu net", desc_en: "Net income", src_fr: "Calculé", src_en: "Calculated", amt: "60 000 $" },
+                  { line: "26000", desc_fr: "Revenu imposable", desc_en: "Taxable income", src_fr: "Calculé", src_en: "Calculated", amt: "60 000 $" },
+                  { line: "40100", desc_fr: "Impôt fédéral de base", desc_en: "Basic federal tax", src_fr: "Barème 2024", src_en: "2024 bracket", amt: "9 115 $" },
+                  { line: "47900", desc_fr: "Crédit personnel de base", desc_en: "Basic personal amount", src_fr: "Règle fédérale", src_en: "Federal rule", amt: "− 2 137 $" },
+                  { line: "48200", desc_fr: "Impôt fédéral net", desc_en: "Net federal tax", src_fr: "Calculé", src_en: "Calculated", amt: "6 978 $" },
+                ].map(row => (
+                  <tr key={row.line}>
+                    <td><code>{row.line}</code></td>
+                    <td>{isEn ? row.desc_en : row.desc_fr}</td>
+                    <td><small>{isEn ? row.src_en : row.src_fr}</small></td>
+                    <td><strong>{row.amt}</strong></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
