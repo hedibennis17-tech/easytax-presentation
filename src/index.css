@@ -364,3 +364,186 @@ footer { padding: 23px clamp(20px, 5vw, 76px); display: flex; align-items: cente
   .workflow-steps-grid { grid-template-columns: 1fr; }
   .doc-distinction-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── SCREENSHOT SECTIONS ─────────────────────────────────── */
+
+.screenshots-section {
+  padding: 80px clamp(20px, 5vw, 76px);
+  background: var(--navy);
+}
+.screenshots-section.alt {
+  background: var(--cream);
+}
+.screenshots-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.screenshots-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.screenshots-header h2 {
+  font: 800 clamp(24px, 3vw, 38px)/1.1 Manrope, sans-serif;
+  color: white;
+  margin: 10px 0 12px;
+}
+.screenshots-section.alt .screenshots-header h2 {
+  color: var(--ink);
+}
+.screenshots-header p {
+  color: rgba(255,255,255,0.65);
+  font-size: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.screenshots-section.alt .screenshots-header p {
+  color: var(--muted);
+}
+.screenshots-eyebrow {
+  font: 700 11px/1 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.screenshots-section.alt .screenshots-eyebrow {
+  color: var(--blue);
+}
+
+.screenshots-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.screenshots-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.screenshot-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.screenshots-section.alt .screenshot-card {
+  background: white;
+  border-color: var(--line);
+  box-shadow: 0 2px 12px rgba(16,40,70,0.06);
+}
+.screenshot-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.screenshots-section.alt .screenshot-card:hover {
+  box-shadow: 0 8px 32px rgba(16,40,70,0.12);
+}
+.screenshot-label {
+  padding: 12px 16px;
+  font: 600 12px/1 'DM Mono', monospace;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+}
+.screenshots-section.alt .screenshot-label {
+  color: var(--blue);
+  border-color: var(--line);
+  background: var(--cream);
+}
+.screenshot-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 420px;
+}
+
+/* ─── SCREENSHOT BAND (horizontal 2-col layout) ─────────── */
+
+.screenshot-band {
+  padding: 72px clamp(20px, 5vw, 76px);
+  background: white;
+}
+.screenshot-band.alt {
+  background: var(--cream);
+}
+.screenshot-band.dark {
+  background: var(--navy);
+}
+.screenshot-band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.screenshot-band-inner.reverse {
+  direction: rtl;
+}
+.screenshot-band-inner.reverse > * {
+  direction: ltr;
+}
+.screenshot-band-text h3 {
+  font: 800 clamp(22px, 2.5vw, 32px)/1.15 Manrope, sans-serif;
+  color: var(--ink);
+  margin: 10px 0 14px;
+}
+.screenshot-band-text.light h3 {
+  color: white;
+}
+.screenshot-band-text p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.screenshot-band-text.light p {
+  color: rgba(255,255,255,0.65);
+}
+.screenshot-band.dark .screenshots-eyebrow {
+  color: var(--cyan);
+}
+.screenshot-band.dark .screenshots-eyebrow.accent {
+  color: var(--coral);
+}
+.screenshot-band-img {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(16,40,70,0.15);
+}
+.screenshot-band-img.wide img {
+  max-height: 360px;
+  object-fit: contain;
+  background: white;
+  padding: 12px;
+}
+.screenshot-band-img img {
+  width: 100%;
+  display: block;
+  max-height: 500px;
+  object-fit: cover;
+}
+.screenshot-band.dark .screenshot-band-img {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+
+/* ─── RESPONSIVE screenshots ──────────────────────────────── */
+@media (max-width: 900px) {
+  .screenshots-grid-2,
+  .screenshots-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .screenshot-band-inner,
+  .screenshot-band-inner.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 32px;
+  }
+  .screenshot-band-inner.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

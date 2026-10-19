@@ -356,6 +356,27 @@ function App() {
         </div>
       </section>
 
+      {/* SCREENSHOTS — APP IN ACTION (after Vision) */}
+      <section className="screenshots-section">
+        <div className="screenshots-inner">
+          <div className="screenshots-header">
+            <div className="screenshots-eyebrow">{isEn ? "THE APP IN ACTION" : "L'APPLICATION EN ACTION"}</div>
+            <h2>{isEn ? "A real platform, real data" : "Une plateforme réelle, des données réelles"}</h2>
+            <p>{isEn ? "These screens come directly from the functional version of EasyTax running in a test environment." : "Ces écrans proviennent directement de la version fonctionnelle d'EasyTax en environnement de test."}</p>
+          </div>
+          <div className="screenshots-grid-2">
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "Personal dashboard" : "Tableau de bord personnel"}</div>
+              <img src="/screenshots/dashboard-personal.jpg" alt={isEn ? "EasyTax personal dashboard" : "Tableau de bord EasyTax"} loading="lazy" />
+            </div>
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "Account type selection" : "Sélection du type de compte"}</div>
+              <img src="/screenshots/account-type.jpg" alt={isEn ? "Account type selection" : "Sélection du type de compte"} loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CHAPTER 2 — ARCHITECTURE */}
       <section className="doc-section alt" id="architecture">
         <div className="doc-section-inner">
@@ -659,6 +680,20 @@ function App() {
         </div>
       </section>
 
+      {/* SCREENSHOT — QUESTIONNAIRE */}
+      <div className="screenshot-band">
+        <div className="screenshot-band-inner">
+          <div className="screenshot-band-text">
+            <div className="screenshots-eyebrow">{isEn ? "PROFILE & QUESTIONNAIRE" : "PROFIL & QUESTIONNAIRE"}</div>
+            <h3>{isEn ? "Adaptive questions — province, income, family status" : "Questions adaptatives — province, revenus, situation familiale"}</h3>
+            <p>{isEn ? "The questionnaire adjusts to each user's profile. Only relevant sections are shown — 102 questions maximum, dynamically filtered." : "Le questionnaire s'adapte au profil de chaque utilisateur. Seules les sections pertinentes s'affichent — 102 questions maximum, filtrées dynamiquement."}</p>
+          </div>
+          <div className="screenshot-band-img">
+            <img src="/screenshots/questionnaire.jpg" alt={isEn ? "Adaptive questionnaire" : "Questionnaire adaptatif"} loading="lazy" />
+          </div>
+        </div>
+      </div>
+
       {/* CHAPTER 6 — DOCUMENTS & OCR */}
       <section className="doc-section alt" id="documents">
         <div className="doc-section-inner">
@@ -707,6 +742,30 @@ function App() {
         </div>
       </section>
 
+      {/* SCREENSHOTS — OCR PIPELINE */}
+      <section className="screenshots-section alt">
+        <div className="screenshots-inner">
+          <div className="screenshots-header">
+            <div className="screenshots-eyebrow">{isEn ? "DOCUMENT VAULT & OCR" : "COFFRE DOCUMENTAIRE & OCR"}</div>
+            <h2>{isEn ? "Upload → OCR → Human validation → Tax data" : "Téléversement → OCR → Validation humaine → Données fiscales"}</h2>
+          </div>
+          <div className="screenshots-grid-3">
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "Document vault — 3/3 analyzed" : "Coffre documentaire — 3/3 analysés"}</div>
+              <img src="/screenshots/documents-vault.jpg" alt={isEn ? "Document vault" : "Coffre documentaire"} loading="lazy" />
+            </div>
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "OCR step 3 — Validation (empty)" : "Étape 3 OCR — Validation (vide)"}</div>
+              <img src="/screenshots/ocr-validation-empty.jpg" alt="OCR validation" loading="lazy" />
+            </div>
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "OCR step 3 — Validation (12/18 extracted)" : "Étape 3 OCR — Validation (12/18 extraites)"}</div>
+              <img src="/screenshots/ocr-validation-filled.jpg" alt="OCR validation filled" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CHAPTER 7 — DICTIONARY */}
       <section className="doc-section" id="dictionary">
         <div className="doc-section-inner">
@@ -742,6 +801,20 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* SCREENSHOT — T4 SLIP */}
+      <div className="screenshot-band alt">
+        <div className="screenshot-band-inner reverse">
+          <div className="screenshot-band-text">
+            <div className="screenshots-eyebrow">{isEn ? "TAX DICTIONARY" : "DICTIONNAIRE FISCAL"}</div>
+            <h3>{isEn ? "The T4 — the most common employment slip" : "Le T4 — le feuillet d'emploi le plus courant"}</h3>
+            <p>{isEn ? "Each box on a T4 maps to a specific tax line. Box 14 (employment income) → Line 10100 of the federal T1. The dictionary catalogues all 43 slip types with the same level of precision." : "Chaque case du T4 correspond à une ligne fiscale précise. Case 14 (revenus d'emploi) → Ligne 10100 du T1 fédéral. Le dictionnaire catalogue les 43 types de feuillets avec le même niveau de précision."}</p>
+          </div>
+          <div className="screenshot-band-img wide">
+            <img src="/screenshots/t4-slip.png" alt="T4 slip example" loading="lazy" />
+          </div>
+        </div>
+      </div>
 
       {/* CHAPTER 8 — TAX ENGINE */}
       <section className="doc-section alt" id="engine">
@@ -846,6 +919,30 @@ function App() {
                 ? "The simulator allows users to see the impact of any data change in real time. Correcting a T4 box value immediately shows how the taxable income and final balance shift. Every anomaly (missing data, conflicting values, exceeded limits) is flagged before validation. The system never silently changes a confirmed value."
                 : "Le simulateur permet aux utilisateurs de voir l'impact de tout changement de données en temps réel. Corriger une valeur de case T4 montre immédiatement comment le revenu imposable et le solde final évoluent. Chaque anomalie (données manquantes, valeurs contradictoires, limites dépassées) est signalée avant la validation. Le système n'écrase jamais silencieusement une valeur confirmée."}
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SCREENSHOTS — TAX ENGINE & SIMULATOR */}
+      <section className="screenshots-section">
+        <div className="screenshots-inner">
+          <div className="screenshots-header">
+            <div className="screenshots-eyebrow">{isEn ? "TAX ENGINE · SIMULATOR · RESULTS" : "MOTEUR FISCAL · SIMULATEUR · RÉSULTATS"}</div>
+            <h2>{isEn ? "Line-by-line traceability, real numbers" : "Traçabilité ligne par ligne, chiffres réels"}</h2>
+          </div>
+          <div className="screenshots-grid-3">
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "Fiscal summary — Federal + Québec" : "Résumé fiscal — Fédéral + Québec"}</div>
+              <img src="/screenshots/fiscal-summary.jpg" alt={isEn ? "Fiscal summary" : "Résumé fiscal"} loading="lazy" />
+            </div>
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "T1 federal declaration — 9 lines filled" : "Déclaration T1 fédérale — 9 lignes remplies"}</div>
+              <img src="/screenshots/declaration-t1.jpg" alt="T1 declaration" loading="lazy" />
+            </div>
+            <div className="screenshot-card">
+              <div className="screenshot-label">{isEn ? "Assessment summary — Federal NOA style" : "Sommaire de cotisation — style avis fédéral"}</div>
+              <img src="/screenshots/assessment-summary.jpg" alt={isEn ? "Assessment summary" : "Sommaire de cotisation"} loading="lazy" />
+            </div>
           </div>
         </div>
       </section>
@@ -961,6 +1058,20 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* SCREENSHOT — ADMIN CONSOLE */}
+      <div className="screenshot-band dark">
+        <div className="screenshot-band-inner">
+          <div className="screenshot-band-text light">
+            <div className="screenshots-eyebrow accent">{isEn ? "SUPER ADMINISTRATION" : "SUPER ADMINISTRATION"}</div>
+            <h3>{isEn ? "Complete control — 7 users, 6 fiscal profiles, 4 documents" : "Contrôle total — 7 utilisateurs, 6 profils fiscaux, 4 documents"}</h3>
+            <p>{isEn ? "The admin console gives the SUPER_ADMIN full visibility over all individual and business activity, declarations, and platform settings." : "La console d'administration donne au SUPER_ADMIN une visibilité complète sur toutes les activités individuelles, entreprises, déclarations et paramètres de la plateforme."}</p>
+          </div>
+          <div className="screenshot-band-img">
+            <img src="/screenshots/admin-console.jpg" alt={isEn ? "Admin console" : "Console d'administration"} loading="lazy" />
+          </div>
+        </div>
+      </div>
 
       {/* CHAPTER 13 — INTEGRATIONS */}
       <section className="doc-section" id="integrations">
